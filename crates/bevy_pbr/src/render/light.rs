@@ -468,7 +468,7 @@ pub fn extract_lights(
     {
         if !view_visibility.get() {
             if let Ok(mut entity_commands) = commands.get_entity(render_entity) {
-                entity_commands.remove::<ExtractedPointLight>();
+                entity_commands.remove::<(ExtractedPointLight, PointAndSpotLightViewEntities)>();
             }
             continue;
         }
@@ -600,7 +600,7 @@ pub fn extract_lights(
     {
         if !view_visibility.get() {
             if let Ok(mut entity_commands) = commands.get_entity(render_entity) {
-                entity_commands.remove::<ExtractedPointLight>();
+                entity_commands.remove::<(ExtractedPointLight, PointAndSpotLightViewEntities)>();
             }
             continue;
         }
